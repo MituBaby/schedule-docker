@@ -19,3 +19,7 @@ app.use('/api/v1', userRouter);
 app.use('/api/v1/schedules', scheduleRouter);
 
 app.listen(PORT, () => console.log(`Server running on port:${PORT}`));
+
+const html = '<div><h1>Hello, World!</h1></div>';
+
+html.use();

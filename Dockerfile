@@ -1,8 +1,8 @@
 # Gunakan image Node.js dari Docker Hub
-FROM node:14-alpine
+FROM node:20-alpine
 
 # Set direktori kerja di dalam container
-WORKDIR /src/app
+WORKDIR /app
 
 # Salin package.json dan package-lock.json ke direktori kerja
 COPY package* ./
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Port yang akan digunakan oleh aplikasi
-EXPOSE 3000
+EXPOSE 5000
 
 # Perintah untuk menjalankan aplikasi ketika container dijalankan
 CMD ["npm", "run", "dev"]
