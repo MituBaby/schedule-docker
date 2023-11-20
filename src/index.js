@@ -6,6 +6,7 @@ import 'dotenv/config.js';
 import connectMongoDB from './config/config.js';
 import userRouter from './routes/user.js';
 import scheduleRouter from './routes/schedules.js';
+import homeRouter from './routes/home.js';
 
 const app = express();
 const PORT = 5000;
@@ -15,11 +16,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan('dev'));
 
+app.use('/', homeRouter);
 app.use('/api/v1', userRouter);
 app.use('/api/v1/schedules', scheduleRouter);
 
 app.listen(PORT, () => console.log(`Server running on port:${PORT}`));
-
-const html = '<div><h1>Hello, World!</h1></div>';
-
-html.use();
