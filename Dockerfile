@@ -13,8 +13,5 @@ RUN npm install
 # Salin seluruh proyek ke direktori kerja
 COPY . .
 
-# Port yang akan digunakan oleh aplikasi
-EXPOSE 5000
-
 # Perintah untuk menjalankan aplikasi ketika container dijalankan
 CMD ["npm", "run", "dev"]
